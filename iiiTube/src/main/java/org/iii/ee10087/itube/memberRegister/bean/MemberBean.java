@@ -11,44 +11,45 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-
-
 @Entity
 @Table(name = "MEMBER")
 public class MemberBean implements Serializable {
 
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	// @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private String account; // 帳號
 	private String password; // 密碼
 	private String name; // 姓名
 	private String email; // 電子信箱
+	private String phone; // 電話號碼
 	private String address; // 地址
-	private java.sql.Date registerdate; // 會員註冊日期
 	private Blob photo; // 照片
+	private java.sql.Date registerdate; // 會員註冊日期
 	private java.sql.Date lastlogin; // 最近登入日期
+	private Boolean ban; // 封鎖
 	@Transient
-	private Integer idnumber; //流水編號
-	
-	public MemberBean(Integer idnumber, String account, String password, String name, String email, String address,
-			java.sql.Date registerdate, Blob photo, java.sql.Date lastlogin) {
-		this.idnumber = idnumber;
+	private Integer idnumber; // 流水編號
+
+
+
+
+	public MemberBean(String account, String password, String name, String email, String phone, String address,
+			Blob photo, java.sql.Date registerdate, java.sql.Date lastlogin, Boolean ban) {
+		super();
 		this.account = account;
 		this.password = password;
 		this.name = name;
 		this.email = email;
+		this.phone = phone;
 		this.address = address;
-		this.registerdate = registerdate;
 		this.photo = photo;
+		this.registerdate = registerdate;
 		this.lastlogin = lastlogin;
+		this.ban = ban;
 	}
 
-	
-	
 	public MemberBean() {
 	}
-
-
 
 	public Integer getIdnumber() {
 		return idnumber;
@@ -117,5 +118,23 @@ public class MemberBean implements Serializable {
 	public void setLastlogin(java.sql.Date lastlogin) {
 		this.lastlogin = lastlogin;
 	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public Boolean getBan() {
+		return ban;
+	}
+
+	public void setBan(Boolean ban) {
+		this.ban = ban;
+	}
+
+
 
 }
