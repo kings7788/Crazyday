@@ -10,6 +10,11 @@
 <title>會員資料修改</title>
 </head>
 <body>
+
+<jsp:include page="/top.jsp" />
+	
+	
+	
 	<form action="update.do" method="post" enctype="multipart/form-data">
 
 		<table>
@@ -24,19 +29,16 @@
 				</tr>
 				<tr>
 					<td>帳號:</td>
-					<td><input type="text" name="account"
-						value="${LoginOK.account}" readonly="readonly"></td>
+					<td><input type="text" name="account" value="${LoginOK.account}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>密碼:</td>
-					<td><input type="password" name="password"
-						value="${MemberBean.password}"></td>
+					<td><input type="password" name="password" value="${MemberBean.password}"></td>
 					<td><span>${errorMessage.password}</span></td>
 				</tr>
 				<tr>
 					<td>電子信箱:</td>
-					<td><input type="email" name="email"
-						value="${MemberBean.email}"></td>
+					<td><input type="email" name="email" value="${MemberBean.email}"></td>
 					<td><span>${errorMessage.email}</span></td>
 				</tr>
 				<tr>
@@ -47,17 +49,14 @@
 
 				<tr>
 					<td></td>
-					<td><input type="submit" value="修改完成"> <input
-						type="reset" value="還原資料"></td>
+					<td><input type="submit" value="修改完成"><input type="reset" value="還原資料"></td>
 
 				</tr>
 				<tr>
-					<td><span>${errorMessage.sql}<c:if
-								test="${not empty Update}">${Update.name}資料更新成功!</c:if></span></td>
+					<td><span>${errorMessage.sql}<c:if test="${not empty Update}">${Update.name}資料更新成功!</c:if></span></td>
 				</tr>
 			</tbody>
 		</table>
 	</form>
-<a href="<c:url value='../MemberCenter.jsp' /> ">回會員中心</a>
 </body>
 </html>
