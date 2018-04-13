@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<property name="hibernate.connection.datasource">java:comp/env/jdbc/DB</property>
+<!--         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property> -->
+<!--         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=DBcustom</property> -->
+<!--         <property name="hibernate.connection.username">sa</property> -->
+<!--         <property name="hibernate.connection.password">sa123456</property>         -->
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+        <property name="hibernate.show_sql">true</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<mapping class="org.iii.ee10087.itube.QA.bean.MemberQABean" />
+		<mapping class="org.iii.ee10087.itube.memberRegister.bean.MemberBean" />
+		<mapping class="org.iii.ee10087.itube.manage.bean.ManageBean" />
+		<mapping class="org.iii.ee10087.itube.ans.bean.AnsBean" />
+
+
+    </session-factory>
+</hibernate-configuration>
