@@ -1,6 +1,6 @@
 --先執行 scripts 建立相關表格---------------------
  
-USE DBcustom   --或其它 DB
+USE EEITDB   --或其它 DB
 GO
 
 drop table member43;
