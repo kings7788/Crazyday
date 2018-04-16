@@ -23,6 +23,9 @@ public class First extends HttpServlet {
     public First() {
         super();
         // TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor stub
+        String aaa="aaa";
     }
 
 	/**
