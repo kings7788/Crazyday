@@ -31,8 +31,8 @@ public class LoginServlet extends HttpServlet {
 		// 將 errorMsgMap 放入 request 置物櫃內，識別字串為 "ErrorMsgKey"
 		request.setAttribute("ErrorMsgKey", errorMsgMap);
 		// 1. 讀取使用者輸入資料(<Input>標籤內的name屬性分別為 account與pswd
-		String account = request.getParameter("mAcc");
-		String password = request.getParameter("mPwd");
+		String account = request.getParameter("account");
+		String password = request.getParameter("password");
 		// 2. 進行必要的資料轉換
 		// 無
 		// 3. 檢查使用者輸入資料
