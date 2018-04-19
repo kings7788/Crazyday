@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: BOEN
+=======
+Built-By: III
+>>>>>>> e55eac2fe405ac4f3e412511b9427f2b79a0e829
 Build-Jdk: 1.8.0_162
 Created-By: Maven Integration for Eclipse
 

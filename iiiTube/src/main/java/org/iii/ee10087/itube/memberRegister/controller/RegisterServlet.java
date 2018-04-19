@@ -54,29 +54,29 @@ public class RegisterServlet extends HttpServlet {
 		long sizeInBytes = 0;
 		InputStream is = null;
 		
-		String account = request.getParameter("mAcc");
+		String account = request.getParameter("account");
 		if(account == null || account.trim().length()==0){
 			errorMessage.put("account", "帳號欄必須輸入");
 		}
 		
-		String password = request.getParameter("mPwd");
+		String password = request.getParameter("password");
 		if(password == null || password.trim().length()==0){
 			errorMessage.put("password", "密碼欄必須輸入");
 		}
 		
-		String name = request.getParameter("mName");
+		String name = request.getParameter("name");
 		if(name == null || name.trim().length()==0){
 			errorMessage.put("name", "姓名欄必須輸入");
 		}
 		
-		String email = request.getParameter("mEmail");
+		String email = request.getParameter("email");
 		if(email == null || email.trim().length()==0){
 			errorMessage.put("email", "電子信箱必須輸入");
 		}
 		
-		String phone = request.getParameter("mPhone");
+		String phone = request.getParameter("phone");
 		
-		String address = request.getParameter("mAddr");
+		String address = request.getParameter("address");
 		if(address == null || address.trim().length()==0){
 			errorMessage.put("address", "地址必須輸入");
 		}
@@ -106,7 +106,6 @@ public class RegisterServlet extends HttpServlet {
 		try {
 			photo = SystemUtils.fileToBlob(is, sizeInBytes);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		}
@@ -131,7 +130,7 @@ public class RegisterServlet extends HttpServlet {
 			} catch (SQLException e) {
 				if (e.getMessage().indexOf("重複的索引鍵") != -1 || 
 					e.getMessage().indexOf("Duplicate entry") != -1) {
-					errorMessage.put("acc","帳號重複，請重新輸入帳號");
+					errorMessage.put("account","帳號重複，請重新輸入帳號");
 				} else {
 					errorMessage.put("exception","資料庫存取錯誤:" + e.getMessage());
 				}

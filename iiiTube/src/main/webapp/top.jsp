@@ -115,32 +115,32 @@
 							<table class="reg_table">
 								<tr>
 									<td><label for="Acc">帳號:</label></td>
-									<td><input type="text" name="mAcc" id="Acc"	value="${param.mAcc}">
+									<td><input type="text" name="account" id="Acc"	value="${param.mAcc}">
 										<div style="color: #FF0000; font-size: 60%; display: inline">${errorMessage.account}</div>
 									</td>
 								</tr>
 								<tr>
 									<td><label for="Pwd">密碼:</label></td>
-									<td><input type="password" name="mPwd" id="Pwd">
+									<td><input type="password" name="password" id="Pwd">
 										<div style="color: #FF0000; font-size: 60%; display: inline">${errorMessage.password}</div>
 									</td>
 
 								</tr>
 								<tr>
 									<td><label for="Name">姓名:</label></td>
-									<td><input type="text" name="mName" id="Name" value="${param.mName}">
+									<td><input type="text" name="name" id="Name" value="${param.mName}">
 										<div style="color: #FF0000; font-size: 60%; display: inline">${errorMessage.name}</div>
 									</td>
 								</tr>
 								<tr>
 									<td><label for="eMail">電子信箱:</label></td>
-									<td><input type="email" name="mEmail" id="eMail" value="${param.mEmail}">
+									<td><input type="email" name="email" id="eMail" value="${param.mEmail}">
 										<div style="color: #FF0000; font-size: 60%; display: inline">${errorMessage.email}</div>
 									</td>
 								</tr>
 								<tr>
 									<td><label for="Addr">地址:</label></td>
-									<td><input type="text" name="mAddr" id="Addr" value="${param.mAddr}">
+									<td><input type="text" name="address" id="Addr" value="${param.mAddr}">
 										<div style="color: #FF0000; font-size: 60%; display: inline">${errorMessage.address}</div>
 									</td>
 								</tr>
@@ -191,9 +191,9 @@
 
 
 						<form class="login_form" action="<c:url value='/login.do'/>"	method="post">
-							<input type="text" name="mAcc" value="${param.mAcc}" placeholder="帳號">
+							<input type="text" name="account" value="${param.mAcc}" placeholder="帳號">
 								<small><Font color='red' size="-1">${ErrorMsgKey.AccountEmptyError}</Font></small><br>
-							<input type="password" name="mPwd" value="" placeholder="密碼" />
+							<input type="password" name="password" value="" placeholder="密碼" />
 								<small><Font color='red' size="-1">${ErrorMsgKey.PasswordEmptyError}</Font></small><br>
 							<Font color='red' size="-1">${ErrorMsgKey.LoginError}&nbsp;</Font>
 							<div class="sub_box">
