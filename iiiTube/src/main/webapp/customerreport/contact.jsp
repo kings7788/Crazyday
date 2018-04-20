@@ -47,7 +47,7 @@
       <div class="row">
         <div class="col-lg-8 mb-4">
           <h3>讓我們知道您的意見~</h3>
-          <form  action="<c:url value="/customerreport/qa.controller"/>" name="sentMessage" id="contactForm" enctype="multipart/form-data"  method="post">
+          <form  action="<c:url value="/customerreport/qa"/>" name="sentMessage" id="contactForm" enctype="multipart/form-data"  method="post">
             <div class="control-group form-group">
               <div class="controls">
                 <label>項目:</label>

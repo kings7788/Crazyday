@@ -33,6 +33,8 @@ fileSizeThreshold = 5*1024 * 1024,
 maxFileSize = 1024 * 1024 * 500, 
 maxRequestSize = 1024 * 1024 * 500 * 5)
 
+
+
 @WebServlet("/customerreport/qa.controller")
 public class MemberQAServlet extends HttpServlet {
 private MemberQAService service ;
