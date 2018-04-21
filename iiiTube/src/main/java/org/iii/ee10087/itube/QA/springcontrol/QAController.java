@@ -20,9 +20,9 @@ public class QAController {
 	@RequestMapping("/customerreport/qa")
 	public String insertContact(Model model,HttpServletRequest request,
 											HttpServletResponse response,HttpSession session) {
-		return null;
 		
+		
+		
+		return null;
 	}
-	
-	
 }

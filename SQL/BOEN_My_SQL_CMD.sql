@@ -6,16 +6,7 @@ GO
 drop table member43;
 -- : playlist
 
-create table member43     --暫時不用
-(
-  member_id   varchar(200)    PRIMARY KEY ,  --帳號  主鍵
-  pword      varchar(20),      --密碼
-  member_name  varchar(100),  --會員姓名
-  member_email  varchar(100),
-  member_num     int  identity(1,1)   --會員編號  外部鍵 索引
-                
-);  
-GO
+
 
 drop table member_question  ;
 --q&a :  member_question
