@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
+Built-By: Allen
+=======
 Built-By: lient
+>>>>>>> 0ea36b7f73f4825d5a2312d76bacc330212c754a
 Build-Jdk: 1.8.0_162
 Created-By: Maven Integration for Eclipse
 
