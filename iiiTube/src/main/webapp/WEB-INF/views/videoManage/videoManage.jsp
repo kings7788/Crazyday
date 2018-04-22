@@ -122,34 +122,38 @@
 				</ul>
 			</div>
 		</div>
-<!-- 		<div id="dialog-form" title="影片資料變更"> -->
-<!-- 			<p class="validateTips">請輸入欲變更資料</p> -->
-<%-- 			<form id="myForm" name = "myForm" ENCTYPE="multipart/form-data"> --%>
-<!-- 			<fieldset> -->
-<!-- 				<input type="hidden" name="seqNo" id="seqNo" value="" > -->
-<%-- 				<input type="hidden" name="videoUploaderAccount" id="videoUploaderAccount" value="${LoginOK.userAccount}" > --%>
-<!-- 				<label for="videoTitle">影片標題</label> -->
-<!-- 				<input type="text" name="videoTitle" id="videoTitle" value="" class="text ui-widget-content ui-corner-all"> -->
-<!-- 				<label for="videoDescription">影片描述</label> -->
-<!-- 				<input type="text" name="videoDescription" id="videoDescription" value="" class="text ui-widget-content ui-corner-all"> -->
-<!-- 				<label for="song">影片種類</label> -->
-<!-- 				<input type="radio" name="videoType" id="song" value="音樂" class="updateRadio" >音樂 -->
-<!-- 				<input type="radio" name="videoType" id="sport" value="運動" class="ui-corner-all updateRadio">運動 -->
-<!-- 				<input type="radio" name="videoType" id="game" value="遊戲" class="ui-corner-all updateRadio">遊戲 -->
-<!-- 				<input type="radio" name="videoType" id="news" value="新聞" class="ui-corner-all updateRadio">新聞 -->
-<!-- 				<input type="radio" name="videoType" id="liveStream" value="直播" class="ui-corner-all updateRadio">直播 -->
-<!-- 				<input type="radio" name="videoType" id="technology" value="科技" class="ui-corner-all updateRadio">科技 -->
-<!-- 				<input type="radio" name="videoType" id="food" value="美食" class="ui-corner-all updateRadio">美食 -->
-<!-- 				<input type="radio" name="videoType" id="politics" value="政治" class="ui-corner-all updateRadio">政治 -->
-<!-- 				<input type="radio" name="videoType" id="fashion" value="時尚" class="ui-corner-all updateRadio">時尚 -->
-<!-- 				<input type="radio" name="videoType" id="movie" value="電影" class="ui-corner-all updateRadio">電影 -->
-<!-- 				<input type="radio" name="videoType" id="other" value="其他" class="ui-corner-all updateRadio">其他 -->
-<!-- 				<label for="videoImage">影片照片</label> -->
-<!-- 				<input type="file" name="videoImage" id="videoImage" class="text ui-widget-content ui-corner-all"> -->
-<!-- 				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px"> -->
-<!-- 			</fieldset> -->
-<%-- 			</form> --%>
-<!-- 		</div> -->
+		<div id="dialog-form" title="影片資料變更">
+			<p class="validateTips">請輸入欲變更資料</p>
+			<form:form modelAttribute="VideoBean" id="myForm" name = "myForm" ENCTYPE="multipart/form-data">
+			<fieldset>
+				<form:input type="hidden" path="videoSeqNo" name="videoSeqNo" id="videoSeqNo" value="" />
+				<form:input type="hidden" path="account" name="videoUploaderAccount" id="videoUploaderAccount" value="${LoginOK.userAccount}" />
+				<label for="videoTitle">影片標題</label>
+				<form:input type="text" path="videoTitle" name="videoTitle" id="videoTitle" value="" class="text ui-widget-content ui-corner-all"/>
+				<label for="videoDescription">影片描述</label>
+				<form:input type="text" path="videoDescription" name="videoDescription" id="videoDescription" value="" class="text ui-widget-content ui-corner-all"/>
+				<label for="song">影片種類</label>
+<%-- 				<form:input type="radio"  name="videoType" id="song" value="音樂" class="updateRadio" />音樂 --%>
+<%-- 				<form:input type="radio" name="videoType" id="sport" value="運動" class="ui-corner-all updateRadio" />運動 --%>
+<%-- 				<form:input type="radio" name="videoType" id="game" value="遊戲" class="ui-corner-all updateRadio" />遊戲 --%>
+<%-- 				<form:input type="radio" name="videoType" id="news" value="新聞" class="ui-corner-all updateRadio" />新聞 --%>
+<%-- 				<form:input type="radio" name="videoType" id="liveStream" value="直播" class="ui-corner-all updateRadio" />直播 --%>
+<%-- 				<form:input type="radio" name="videoType" id="technology" value="科技" class="ui-corner-all updateRadio" />科技 --%>
+<%-- 				<form:input type="radio" name="videoType" id="food" value="美食" class="ui-corner-all updateRadio" />美食 --%>
+<%-- 				<form:input type="radio" name="videoType" id="politics" value="政治" class="ui-corner-all updateRadio" />政治 --%>
+<%-- 				<form:input type="radio" name="videoType" id="fashion" value="時尚" class="ui-corner-all updateRadio" />時尚 --%>
+<%-- 				<form:input type="radio" name="videoType" id="movie" value="電影" class="ui-corner-all updateRadio" />電影 --%>
+<%-- 				<form:input type="radio" name="videoType" id="other" value="其他" class="ui-corner-all updateRadio" />其他 --%>
+					<form:select path="videoType">
+						<form:option value="-1" label="---" />
+						<form:options items="${videoTypeList}" />
+					</form:select>
+				<label for="videoImage">影片照片</label>
+				<form:input type="file" path="videoImage" name="videoImage" id="videoImage" class="text ui-widget-content ui-corner-all" />
+				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
+			</fieldset>
+			</form:form>
+		</div>
 		
 		<div id="insert-dialog-form" title="新增影片資料">
 			<p class="validateTips">請輸入欲新增影片資料</p>
