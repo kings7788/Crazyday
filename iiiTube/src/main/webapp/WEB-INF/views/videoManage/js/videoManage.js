@@ -108,16 +108,22 @@ $( function() {
 	    return new Blob([ia], {type:mimeString});
 	}
 	function insertvideo() {
+		alert("bbbbb");
 		var form = $('#insertForm')[0];
+		console.log(form);
+		alert("ccccc");
 		var data = new FormData(form);
+		console.log(data);
+		alert("eeeee");
 		var imgbuffer = document.getElementById("myCanvas").toDataURL("image/jpeg", 1.0);
 		var blob = dataURItoBlob(imgbuffer);
-		data.append("videoImageInsert",blob,"videoImage.jpeg")
-		console.log(data);
+		data.append("videoImage",blob,"videoImage.jpeg")
+		console.log("data =    "+data);
+		alert("aaaaaa");
 		$.ajax({
 			type: "POST",
 			enctype: 'multipart/form-data',
-			url: "insertVideo.do",
+			url: "add",
 			data: data,
 			processData: false,
 			contentType: false,
@@ -161,8 +167,8 @@ $( function() {
 				$('#videoDescriptionInsert').empty();
 			},
 			error: function (e) {
-				console.log("ERROR : ", e);
-				alert(e);
+				console.log("ERROR : " + e);
+				alert("ERROR : " + e);
 				dialog.dialog( "close" );
 			}
 		});

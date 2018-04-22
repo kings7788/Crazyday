@@ -16,7 +16,7 @@ public interface VideoManageDAO {
 
 	public List<VideoBean> selectAllVideo(VideoBean vb) throws SQLException;
 
-	public List<VideoBean> getUserVideos();
+	public List<VideoBean> getUserVideos(String account);
 
-	public void setUserAccount(String userAccount);
+	
 }

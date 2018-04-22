@@ -7,6 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlTransient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name="Video")
@@ -99,11 +103,35 @@ public class VideoBean{
 //	public void setMemeberBeanLikeSet(Set<MemberBean> memeberBeanLikeSet) {
 //		MemeberBeanLikeSet = memeberBeanLikeSet;
 //	}
+	
+	@Transient
+	@XmlTransient
+	private MultipartFile videoImage;
+	
+	public MultipartFile getVideoImage() {
+		return videoImage;
+	}
+	public void setVideoImage(MultipartFile videoImage) {
+		this.videoImage = videoImage;
+	}
+	
+	@Transient
+	@XmlTransient
+	private MultipartFile videoFile;
+	
+	
+	public MultipartFile getVideoFile() {
+		return videoFile;
+	}
+	public void setVideoFile(MultipartFile videoFile) {
+		this.videoFile = videoFile;
+	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer videoSeqNo;
 	private String videoTitle;
-	private String userAccount;
+	private String account;
 	private String videoDescription;
 	private String videoType;
 	private String videoUplodaerListType;
@@ -118,14 +146,13 @@ public class VideoBean{
 	private String videoImageFileName;
 	public VideoBean() {
 	}
-	public VideoBean(Integer videoSeqNo, String videoTitle, String userAccount, String videoDescription,
-			String videoType, String videoUplodaerListType, Timestamp videoUploadDate, Integer videoLikes,
-			Integer videoUnlikes, Integer videoViews, String videoStatus, String videoFilePath, String videoFileName,
-			String videoImageFilePath, String videoImageFileName) {
-		super();
+	public VideoBean( Integer videoSeqNo, String videoTitle,
+			String account, String videoDescription, String videoType, String videoUplodaerListType,
+			Timestamp videoUploadDate, Integer videoLikes, Integer videoUnlikes, Integer videoViews, String videoStatus,
+			String videoFilePath, String videoFileName, String videoImageFilePath, String videoImageFileName) {
 		this.videoSeqNo = videoSeqNo;
 		this.videoTitle = videoTitle;
-		this.userAccount = userAccount;
+		this.account = account;
 		this.videoDescription = videoDescription;
 		this.videoType = videoType;
 		this.videoUplodaerListType = videoUplodaerListType;
@@ -151,11 +178,11 @@ public class VideoBean{
 	public void setVideoTitle(String videoTitle) {
 		this.videoTitle = videoTitle;
 	}
-	public String getUserAccount() {
-		return userAccount;
+	public String getAccount() {
+		return account;
 	}
-	public void setUserAccount(String userAccount) {
-		this.userAccount = userAccount;
+	public void setAccount(String account) {
+		this.account = account;
 	}
 	public String getVideoDescription() {
 		return videoDescription;
@@ -231,13 +258,15 @@ public class VideoBean{
 	}
 	@Override
 	public String toString() {
-		return "VideoBean [videoSeqNo=" + videoSeqNo + ", videoTitle=" + videoTitle + ", userAccount=" + userAccount
-				+ ", videoDescription=" + videoDescription + ", videoType=" + videoType + ", videoUplodaerListType="
-				+ videoUplodaerListType + ", videoUploadDate=" + videoUploadDate + ", videoLikes=" + videoLikes
-				+ ", videoUnlikes=" + videoUnlikes + ", videoViews=" + videoViews + ", videoStatus=" + videoStatus
-				+ ", videoFilePath=" + videoFilePath + ", VideoFileName=" + VideoFileName + ", videoImageFilePath="
-				+ videoImageFilePath + ", videoImageFileName=" + videoImageFileName + "]";
+		return "VideoBean [videoImage=" + videoImage + ", videoFile=" + videoFile + ", videoSeqNo=" + videoSeqNo
+				+ ", videoTitle=" + videoTitle + ", account=" + account + ", videoDescription=" + videoDescription
+				+ ", videoType=" + videoType + ", videoUplodaerListType=" + videoUplodaerListType + ", videoUploadDate="
+				+ videoUploadDate + ", videoLikes=" + videoLikes + ", videoUnlikes=" + videoUnlikes + ", videoViews="
+				+ videoViews + ", videoStatus=" + videoStatus + ", videoFilePath=" + videoFilePath + ", VideoFileName="
+				+ VideoFileName + ", videoImageFilePath=" + videoImageFilePath + ", videoImageFileName="
+				+ videoImageFileName + "]";
 	}
+	
 	
 	
 	

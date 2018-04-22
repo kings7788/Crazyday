@@ -38,7 +38,7 @@ public class RootAppConfig {
 		System.out.println("sessionFactory... in RootAppConfig");
 		LocalSessionFactoryBean factory = new LocalSessionFactoryBean();
 		factory.setDataSource(dataSource());
-		factory.setPackagesToScan(new String[]{"org.iii.ee10087.itube._19_.homePage"});
+		factory.setPackagesToScan(new String[]{"org.iii.ee10087.itube._19_"});
 		factory.setHibernateProperties(additionalProperties());
 		return factory;
 		

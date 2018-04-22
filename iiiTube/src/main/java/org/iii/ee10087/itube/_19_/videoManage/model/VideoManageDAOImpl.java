@@ -11,79 +11,35 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Scope("prototype")
 public class VideoManageDAOImpl implements VideoManageDAO {
 
-	private String userAccount;
 	@Autowired
 	private SessionFactory sessionfactory;
 
-	public Session openSession() {
-		return sessionfactory.openSession();
-
-	}
-
-	public Session getSession() {
-		try {
-			return sessionfactory.getCurrentSession();
-		} catch (HibernateException e) {
-			return sessionfactory.openSession();
-		}
-
-	}
-
-	@Override
-	public void setUserAccount(String userAccount) {
-		this.userAccount = userAccount;
-
-	}
-
+	@Transactional
 	@Override
 	public Serializable insertVideo(VideoBean vb) throws SQLException {
 
-		Session session = getSession();
-		Serializable key;
-		try {
-
-			key = session.save(vb);
-		} finally {
-			if (session != null) {
-				try {
-					session.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
-			}
-		}
+		Session session = sessionfactory.getCurrentSession();
+		Serializable key = session.save(vb);
 		return key;
 
 	}
 
+	@Transactional
 	@Override
 	public VideoBean updateVideo(VideoBean vb) throws SQLException {
 
-		Session session = getSession();
-		Transaction trx = null;
-		try {
-			trx = session.beginTransaction();
-			session.saveOrUpdate(vb);
-			trx.commit();
-		} finally {
-			if (session != null) {
-				try {
-					session.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
-			}
-		}
+		Session session = sessionfactory.getCurrentSession();
+		session.saveOrUpdate(vb);
 		return vb;
 	}
 
+	@Transactional
 	@Override
 	public VideoBean deleteVideo(Integer videoSeqNo) throws SQLException {
 
@@ -94,9 +50,10 @@ public class VideoManageDAOImpl implements VideoManageDAO {
 
 	}
 
+	@Transactional
 	@Override
 	public VideoBean selectOneVideo(Integer VideoSeqNo) throws SQLException {
-		Session session = getSession();
+		Session session = sessionfactory.getCurrentSession();
 		VideoBean vb;
 		try {
 			vb = session.get(VideoBean.class, VideoSeqNo);
@@ -114,31 +71,24 @@ public class VideoManageDAOImpl implements VideoManageDAO {
 
 	}
 
+	@Transactional
 	@Override
 	public List<VideoBean> selectAllVideo(VideoBean vb) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Transactional
 	@Override
-	public List<VideoBean> getUserVideos() {
+	public List<VideoBean> getUserVideos(String account) {
 
-		Session session = getSession();
-		List<VideoBean> videoBeanSet;
-		try {
-//			System.out.println(userAccount + " aaaaaa");
-			videoBeanSet = session.createQuery("FROM VideoBean where userAccount = :userAccount and videoStatus = '1'",VideoBean.class).setParameter("userAccount", userAccount).list();
-		} finally {
-			if (session != null) {
-				try {
-					session.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+		Session session = sessionfactory.getCurrentSession();
+		List<VideoBean> videoBeanList;
+		videoBeanList = session
+				.createQuery("FROM VideoBean where account = :account and videoStatus = '1'", VideoBean.class)
+				.setParameter("account", account).list();
 
-			}
-		}
-		return videoBeanSet;
+		return videoBeanList;
 	}
 
 }

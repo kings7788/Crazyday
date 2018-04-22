@@ -140,24 +140,24 @@
 		<h1>熱門影片</h1>
 
 		<div class="row">
-			<c:forEach var="aVideoBean" items="${showVideoBean2.hotVideo}">
+			<c:forEach var="aVideoBean" items="${hotVideoList}">
 				<div class="col-lg-2 col-sm-6 portfolio-item videoBlock">
 					<div class="card h-100 videoBlockInner">
-						<a href="#"> <!--             <img class="card-img-top" src="http://placehold.it/700x400" alt=""> -->
-							<a
-							href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.userAccount}' />">
-								<img height="130px" width="235px"
-								src='${pageContext.request.contextPath}/global/GetImage.do?path=${aVideoBean.videoImageFilePath}'>
-						</a>
-						</a>
+<!-- 						<a href="#">             <img class="card-img-top" src="http://placehold.it/700x400" alt=""> -->
+<!-- 							<a -->
+<%-- 							href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.userAccount}' />"> --%>
+<!-- 								<img height="130px" width="235px" -->
+<%-- 								src='${pageContext.request.contextPath}/global/GetImage.do?path=${aVideoBean.videoImageFilePath}'> --%>
+<!-- 						</a> -->
+<!-- 						</a> -->
 						<div class="card-body">
 							<h6 class="card-title videoTitle">
-								<a
-									href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.userAccount}' />"><b>${aVideoBean.videoTitle}</b></a>
+<!-- 								<a -->
+<%-- 									href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.account}' />"><b>${aVideoBean.videoTitle}</b></a> --%>
 							</h6>
 							<a class="uploaderLink "
-								href="<c:url value='/_18_uploaderRoom/UploaderRoom.do?uploaderAccount=${aVideoBean.userAccount}' />">
-								<p class="videoSmallWords">${aVideoBean.userAccount}</p>
+								href="<c:url value='/_18_uploaderRoom/UploaderRoom.do?uploaderAccount=${aVideoBean.account}' />">
+								<p class="videoSmallWords">${aVideoBean.account}</p>
 							</a>
 							<p class="card-text videoSmallWords">${aVideoBean.videoUploadDate}</p>
 							<p class="videoSmallWords">觀看次數:${aVideoBean.videoViews}</p>
@@ -172,24 +172,24 @@
 		<h1>最新影片</h1>
 
 		<div class="row">
-			<c:forEach var="aVideoBean" items="${showVideoBean2.newVideo}">
+			<c:forEach var="aVideoBean" items="${newVideoList}">
 				<div class="col-lg-2 col-sm-6 portfolio-item videoBlock">
 					<div class="card h-100 videoBlockInner">
-						<a href="#"> <!--             <img class="card-img-top" src="http://placehold.it/700x400" alt=""> -->
-							<a
-							href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.userAccount}' />">
-								<img height="130px" width="235px"
-								src='${pageContext.request.contextPath}/global/GetImage.do?path=${aVideoBean.videoImageFilePath}'>
-						</a>
-						</a>
+<!-- 						<a href="#">             <img class="card-img-top" src="http://placehold.it/700x400" alt=""> -->
+<!-- 							<a -->
+<%-- 							href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.userAccount}' />"> --%>
+<!-- 								<img height="130px" width="235px" -->
+<%-- 								src='${pageContext.request.contextPath}/global/GetImage.do?path=${aVideoBean.videoImageFilePath}'> --%>
+<!-- 						</a> -->
+<!-- 						</a> -->
 						<div class="card-body">
 							<h6 class="card-title videoTitle">
-								<a
-									href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.userAccount}' />"><b>${aVideoBean.videoTitle}</b></a>
+<!-- 								<a -->
+<%-- 									href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.account}' />"><b>${aVideoBean.videoTitle}</b></a> --%>
 							</h6>
 							<a class="uploaderLink"
-								href="<c:url value='/_18_uploaderRoom/UploaderRoom.do?uploaderAccount=${aVideoBean.userAccount}' />">
-								<p class="videoSmallWords">${aVideoBean.userAccount}</p>
+								href="<c:url value='/_18_uploaderRoom/UploaderRoom.do?uploaderAccount=${aVideoBean.account}' />">
+								<p class="videoSmallWords">${aVideoBean.account}</p>
 							</a>
 							<p class="card-text videoSmallWords">${aVideoBean.videoUploadDate}</p>
 							<p class="videoSmallWords">觀看次數:${aVideoBean.videoViews}</p>

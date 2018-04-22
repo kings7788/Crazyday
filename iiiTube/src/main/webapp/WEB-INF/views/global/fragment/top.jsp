@@ -59,7 +59,7 @@
 	            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
 	              <a class="dropdown-item" href="<c:url value='/watchHistory/WatchHistory.do' />">瀏覽紀錄</a>
 	              <a class="dropdown-item" href="<c:url value='/likeUnlikeVideos/ShowLikeVideos.do' />">喜歡的影片</a>
-	              <a class="dropdown-item" href="videoManage">影片管理</a>
+	              <a class="dropdown-item" href="videos/bob">影片管理</a>
 	              <a class="dropdown-item" href="<c:url value='/subscriptionUploader/ShowSubscriptionUploader.do' />">訂閱III Tuber</a>
 <!-- 	              <a class="dropdown-item" href="portfolio-item.html">Video room</a> -->
 	            </div>

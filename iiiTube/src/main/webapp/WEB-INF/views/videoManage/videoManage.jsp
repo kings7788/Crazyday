@@ -1,7 +1,8 @@
-<%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
-<%@page import="org.springframework.web.context.WebApplicationContext"%>
+<%-- <%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%> --%>
+<%-- <%@page import="org.springframework.web.context.WebApplicationContext"%> --%>
 <%-- <%@page import="org.iii.iiiTube.videoManage.model.VideoManageDAO"%> --%>
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -60,18 +61,18 @@
 				<li class="breadcrumb-item active">Portfolio 1</li>
 			</ol>
 			<div class="row divOutsideRow">
-				<c:forEach var="aVideoBean" items="${showVideoBean.userVideos}">
+				<c:forEach var="aVideoBean" items="${userVideoList}">
 					<div class="col-md-12 row divOutside">
 						<div class="col-md-10">
 							<div class="media mb-4">
-								<a	href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.userAccount}' />">
-									<img class="d-flex mr-3 picVideo" height="200px" width="400px"	src='${pageContext.request.contextPath}/global/GetImage.do?path=${aVideoBean.videoImageFilePath}'>
-								</a>
+<%-- 								<a	href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.account}' />"> --%>
+<%-- 									<img class="d-flex mr-3 picVideo" height="200px" width="400px"	src='${pageContext.request.contextPath}/global/GetImage.do?path=${aVideoBean.videoImageFilePath}'> --%>
+<!-- 								</a> -->
 								
 								<div class="media-body videoDatas">
-									<a href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.userAccount}' />">
-										<h5 class="mt-0">${aVideoBean.videoTitle}</h5>
-									</a>
+<%-- 									<a href="<c:url value='/videoRoom/VideoRoom.do?videoSeqNo=${aVideoBean.videoSeqNo}&userAccount=${LoginOK.account}' />"> --%>
+<%-- 										<h5 class="mt-0">${aVideoBean.videoTitle}</h5> --%>
+<!-- 									</a> -->
 									<p class="seqNo">${aVideoBean.videoSeqNo}</p>
 									<p>觀看次數:${aVideoBean.videoViews}</p>
 									<p>影片上傳日期時間:${aVideoBean.videoUploadDate}</p>
@@ -121,79 +122,83 @@
 				</ul>
 			</div>
 		</div>
-		<div id="dialog-form" title="影片資料變更">
-			<p class="validateTips">請輸入欲變更資料</p>
-			<form id="myForm" name = "myForm" ENCTYPE="multipart/form-data">
-			<fieldset>
-				<input type="hidden" name="seqNo" id="seqNo" value="" >
-				<input type="hidden" name="videoUploaderAccount" id="videoUploaderAccount" value="${LoginOK.userAccount}" >
-				<label for="videoTitle">影片標題</label>
-				<input type="text" name="videoTitle" id="videoTitle" value="" class="text ui-widget-content ui-corner-all">
-				<label for="videoDescription">影片描述</label>
-				<input type="text" name="videoDescription" id="videoDescription" value="" class="text ui-widget-content ui-corner-all">
-				<label for="song">影片種類</label>
-				<input type="radio" name="videoType" id="song" value="音樂" class="updateRadio" >音樂
-				<input type="radio" name="videoType" id="sport" value="運動" class="ui-corner-all updateRadio">運動
-				<input type="radio" name="videoType" id="game" value="遊戲" class="ui-corner-all updateRadio">遊戲
-				<input type="radio" name="videoType" id="news" value="新聞" class="ui-corner-all updateRadio">新聞
-				<input type="radio" name="videoType" id="liveStream" value="直播" class="ui-corner-all updateRadio">直播
-				<input type="radio" name="videoType" id="technology" value="科技" class="ui-corner-all updateRadio">科技
-				<input type="radio" name="videoType" id="food" value="美食" class="ui-corner-all updateRadio">美食
-				<input type="radio" name="videoType" id="politics" value="政治" class="ui-corner-all updateRadio">政治
-				<input type="radio" name="videoType" id="fashion" value="時尚" class="ui-corner-all updateRadio">時尚
-				<input type="radio" name="videoType" id="movie" value="電影" class="ui-corner-all updateRadio">電影
-				<input type="radio" name="videoType" id="other" value="其他" class="ui-corner-all updateRadio">其他
-				<label for="videoImage">影片照片</label>
-				<input type="file" name="videoImage" id="videoImage" class="text ui-widget-content ui-corner-all">
-				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-			</fieldset>
-			</form>
-		</div>
+<!-- 		<div id="dialog-form" title="影片資料變更"> -->
+<!-- 			<p class="validateTips">請輸入欲變更資料</p> -->
+<%-- 			<form id="myForm" name = "myForm" ENCTYPE="multipart/form-data"> --%>
+<!-- 			<fieldset> -->
+<!-- 				<input type="hidden" name="seqNo" id="seqNo" value="" > -->
+<%-- 				<input type="hidden" name="videoUploaderAccount" id="videoUploaderAccount" value="${LoginOK.userAccount}" > --%>
+<!-- 				<label for="videoTitle">影片標題</label> -->
+<!-- 				<input type="text" name="videoTitle" id="videoTitle" value="" class="text ui-widget-content ui-corner-all"> -->
+<!-- 				<label for="videoDescription">影片描述</label> -->
+<!-- 				<input type="text" name="videoDescription" id="videoDescription" value="" class="text ui-widget-content ui-corner-all"> -->
+<!-- 				<label for="song">影片種類</label> -->
+<!-- 				<input type="radio" name="videoType" id="song" value="音樂" class="updateRadio" >音樂 -->
+<!-- 				<input type="radio" name="videoType" id="sport" value="運動" class="ui-corner-all updateRadio">運動 -->
+<!-- 				<input type="radio" name="videoType" id="game" value="遊戲" class="ui-corner-all updateRadio">遊戲 -->
+<!-- 				<input type="radio" name="videoType" id="news" value="新聞" class="ui-corner-all updateRadio">新聞 -->
+<!-- 				<input type="radio" name="videoType" id="liveStream" value="直播" class="ui-corner-all updateRadio">直播 -->
+<!-- 				<input type="radio" name="videoType" id="technology" value="科技" class="ui-corner-all updateRadio">科技 -->
+<!-- 				<input type="radio" name="videoType" id="food" value="美食" class="ui-corner-all updateRadio">美食 -->
+<!-- 				<input type="radio" name="videoType" id="politics" value="政治" class="ui-corner-all updateRadio">政治 -->
+<!-- 				<input type="radio" name="videoType" id="fashion" value="時尚" class="ui-corner-all updateRadio">時尚 -->
+<!-- 				<input type="radio" name="videoType" id="movie" value="電影" class="ui-corner-all updateRadio">電影 -->
+<!-- 				<input type="radio" name="videoType" id="other" value="其他" class="ui-corner-all updateRadio">其他 -->
+<!-- 				<label for="videoImage">影片照片</label> -->
+<!-- 				<input type="file" name="videoImage" id="videoImage" class="text ui-widget-content ui-corner-all"> -->
+<!-- 				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px"> -->
+<!-- 			</fieldset> -->
+<%-- 			</form> --%>
+<!-- 		</div> -->
 		
 		<div id="insert-dialog-form" title="新增影片資料">
 			<p class="validateTips">請輸入欲新增影片資料</p>
-			<form id="insertForm" name = "insertForm" ENCTYPE="multipart/form-data">
+			<form:form modelAttribute="VideoBean" id="insertForm" name = "insertForm" ENCTYPE="multipart/form-data" method='POST'>
 				<fieldset>
-					<input type="hidden" name="videoUploaderAccountInsert" id="videoUploaderAccountInsert" value="${LoginOK.userAccount}" >
+					<form:input type="hidden" name="videoUploaderAccountInsert" path="account" id="videoUploaderAccountInsert" value="${LoginOK.userAccount}" />
 					<label for="videoTitleInsert">影片標題</label>
-					<input type="text" name="videoTitleInsert" id="videoTitleInsert" value="" class="text ui-widget-content ui-corner-all">
+					<form:input type="text" name="videoTitleInsert" id="videoTitleInsert" path="videoTitle" value="" class="text ui-widget-content ui-corner-all"/>
 					<label for="videoDescriptionInsert">影片描述</label>
-					<input type="text" name="videoDescriptionInsert" id="videoDescriptionInsert" value="" class="text ui-widget-content ui-corner-all">
-					<label for="song">影片種類</label>
-					<input type="radio" name="videoTypeInsert" id="songInsert" value="音樂" class="updateRadio" >音樂
-					<input type="radio" name="videoTypeInsert" id="sportInsert" value="運動" class="ui-corner-all updateRadio">運動
-					<input type="radio" name="videoTypeInsert" id="gameInsert" value="遊戲" class="ui-corner-all updateRadio">遊戲
-					<input type="radio" name="videoTypeInsert" id="newsInsert" value="新聞" class="ui-corner-all updateRadio">新聞
-					<input type="radio" name="videoTypeInsert" id="liveStreamInsert" value="直播" class="ui-corner-all updateRadio">直播
-					<input type="radio" name="videoTypeInsert" id="technologyInsert" value="科技" class="ui-corner-all updateRadio">科技
-					<input type="radio" name="videoTypeInsert" id="foodInsert" value="美食" class="ui-corner-all updateRadio">美食
-					<input type="radio" name="videoTypeInsert" id="politicsInsert" value="政治" class="ui-corner-all updateRadio">政治
-					<input type="radio" name="videoTypeInsert" id="fashionInsert" value="時尚" class="ui-corner-all updateRadio">時尚
-					<input type="radio" name="videoTypeInsert" id="movieInsert" value="電影" class="ui-corner-all updateRadio">電影
-					<input type="radio" name="videoTypeInsert" id="otherInsert" value="其他" class="ui-corner-all updateRadio">其他
+					<form:input type="text" name="videoDescriptionInsert" id="videoDescriptionInsert" path="videoDescription" class="text ui-widget-content ui-corner-all"/>
+					<label>影片種類</label>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="songInsert" path="videoType" value="音樂" class="updateRadio" />音樂 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="sportInsert" path="videoType" value="運動" class="ui-corner-all updateRadio"/>運動 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="gameInsert" path="videoType" value="遊戲" class="ui-corner-all updateRadio"/>遊戲 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="newsInsert" path="videoType" value="新聞" class="ui-corner-all updateRadio"/>新聞 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="liveStreamInsert" path="videoType" value="直播" class="ui-corner-all updateRadio"/>直播 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="technologyInsert" path="videoType" value="科技" class="ui-corner-all updateRadio"/>科技 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="foodInsert" path="videoType" value="美食" class="ui-corner-all updateRadio"/>美食 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="politicsInsert" path="videoType" value="政治" class="ui-corner-all updateRadio"/>政治 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="fashionInsert" path="videoType" value="時尚" class="ui-corner-all updateRadio"/>時尚 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="movieInsert" path="videoType" value="電影" class="ui-corner-all updateRadio"/>電影 --%>
+<%-- 					<form:radiobutton name="videoTypeInsert" id="otherInsert" path="videoType" value="其他" class="ui-corner-all updateRadio"/>其他 --%>
+					<form:select path="videoType">
+						<form:option value="-1" label="---" />
+						<form:options items="${videoTypeList}" />
+					</form:select>
 <!-- 					<label for="videoImageInsert">影片照片</label> -->
 <!-- 					<input type="file" name="videoImageInsert" id="videoImageInsert" class="text ui-widget-content ui-corner-all"> -->
 					<label for="videofileInsert">影片檔案</label>
-					<input type="file" name="videoFileInsert" id="videoFileInsert" class="text ui-widget-content ui-corner-all">
-					<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+					<form:input type="file" name="videoFileInsert" id="videoFileInsert" path="videoFile" class="text ui-widget-content ui-corner-all"/>
+					<input type="submit" tabindex="-1" style="position:absolute; top:-1000px"/>
 					<video  height="300px" width="500px" src="" id="videoPreview" controls="controls"></video>
 <!-- 					<div id=output></div> -->
 					<p>影片封面截圖:</p>
 					<canvas id=myCanvas></canvas>
 <!-- 					<img id="myImage"> -->
 				</fieldset>
-			</form>
+			</form:form>
 		</div>
-		<div id="delete-dialog-form" title="刪除資料">
-			<p class="validateTips">確認刪除此資料?</p>
-			<form id="deleteForm" name = "deleteForm" >
-				<fieldset>
-					<input type=hidden name="seqNoDelete" id="seqNoDelete" value="" >
-					<p>影片名稱:<span id="videoTitleDelete"></span></p>
-					<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-				</fieldset>
-			</form>
-		</div>
+<!-- 		<div id="delete-dialog-form" title="刪除資料"> -->
+<!-- 			<p class="validateTips">確認刪除此資料?</p> -->
+<%-- 			<form id="deleteForm" name = "deleteForm" > --%>
+<!-- 				<fieldset> -->
+<!-- 					<input type=hidden name="seqNoDelete" id="seqNoDelete" value="" > -->
+<!-- 					<p>影片名稱:<span id="videoTitleDelete"></span></p> -->
+<!-- 					<input type="submit" tabindex="-1" style="position:absolute; top:-1000px"> -->
+<!-- 				</fieldset> -->
+<%-- 			</form> --%>
+<!-- 		</div> -->
 	
 		<footer class="py-5 bg-dark">
 			<div class="container">
@@ -205,6 +210,7 @@
 		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="<c:url value='/videoManage/js/videoManage.js'/> "  ></script>
+		<script src="<c:url value='/videoManage/js/videoManage.js'/>"></script>
+		
 </body>
 </html>
