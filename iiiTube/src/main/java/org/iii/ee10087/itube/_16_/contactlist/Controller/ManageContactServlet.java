@@ -35,12 +35,12 @@ public class ManageContactServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		LinkedList<HashMap<String, String>> l1 = new LinkedList<HashMap<String, String>>();
 		PrintWriter out = response.getWriter();
-			List<MemberQABean> list;
+			List<MemberFAQBean> list;
 			try {
 					list = service.getALL();
 					//request.setAttribute("MapKey", list);
 					session.setAttribute("MapKey", list);
-					for(MemberQABean bean : list) {
+					for(MemberFAQBean bean : list) {
 						Blob blob = bean.getMemQuespic();		
 					}
 					

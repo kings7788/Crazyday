@@ -31,8 +31,8 @@ public class contactservlet extends HttpServlet {
 		LinkedList<HashMap<String, String>> l1 = new LinkedList<HashMap<String, String>>();
 		PrintWriter out = response.getWriter();
 		try {
-			List<MemberQABean> list = service.getALL();
-			for (MemberQABean bean : list) {
+			List<MemberFAQBean> list = service.getALL();
+			for (MemberFAQBean bean : list) {
 				HashMap<String, String> m2 = new HashMap<String, String>();
 				String a = bean.getMemberQuesNum().toString();
 				m2.put("MemQuesNum", a);

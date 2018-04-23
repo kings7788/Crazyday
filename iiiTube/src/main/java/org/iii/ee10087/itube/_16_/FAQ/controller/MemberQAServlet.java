@@ -34,7 +34,6 @@ maxFileSize = 1024 * 1024 * 500,
 maxRequestSize = 1024 * 1024 * 500 * 5)
 
 
-
 @WebServlet("/customerreport/qa.controller")
 public class MemberQAServlet extends HttpServlet {
 private MemberQAService service ;
@@ -163,7 +162,7 @@ private MemberQAService service ;
 			
 		Timestamp ts = new java.sql.Timestamp(System.currentTimeMillis());
 //		bean = new MemberQABean();
-		MemberQABean bean2 = new MemberQABean(100, topic, id, mailbox, name, telp, addr, report, titlee, ts, fileName, blob);
+		MemberFAQBean bean2 = new MemberFAQBean(100, topic, id, mailbox, name, telp, addr, report, titlee, ts, fileName, blob);
 //		bean.setMemberQuesNum(100);
 //		bean.setMemTopic(topic);
 //		bean.setMemId(id);
@@ -180,7 +179,7 @@ private MemberQAService service ;
 		String contextPath = getServletContext().getContextPath();
 		if(submit!=null&& submit.equals("submit")) {
 			service = new MemberQAService();	
-			MemberQABean result=null;
+			MemberFAQBean result=null;
 				try {
 						result = service.insert(bean2);
 						session.setAttribute("insertok", bean2);

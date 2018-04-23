@@ -33,11 +33,11 @@ public class ContactListDetail extends HttpServlet {
 		
 		int quesnum = Integer.parseInt(a);
 		
-		MemberQABean bean= new MemberQABean();
+		MemberFAQBean bean= new MemberFAQBean();
 		bean.setMemberQuesNum(quesnum);
 		
 		try {
-			MemberQABean beandetail = selectdetail.select(bean);
+			MemberFAQBean beandetail = selectdetail.select(bean);
 			if(beandetail!=null) {
 //				request.setAttribute("HaveBean", beandetail);
 				session.setAttribute("HaveBean", beandetail);

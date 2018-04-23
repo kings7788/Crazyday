@@ -14,9 +14,9 @@ public class GetImageImpl implements GetImageDao {
 
 	
 	@Override
-	public MemberQABean getQAImage(MemberQABean mem) {
+	public MemberFAQBean getQAImage(MemberFAQBean mem) {
 		
-		MemberQABean mb = null;
+		MemberFAQBean mb = null;
 		MemberQAService service = new MemberQAService();
 		try {
 			mb = service.select(mem);

@@ -39,9 +39,9 @@ public class RetrieveImageServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
 			}
-			MemberQABean mem = new MemberQABean();
+			MemberFAQBean mem = new MemberFAQBean();
 			mem.setMemberQuesNum(nId);
-			MemberQABean mBean = getImageDao.getQAImage(mem);
+			MemberFAQBean mBean = getImageDao.getQAImage(mem);
 			is = mBean.getMemQuespic().getBinaryStream();
 			fileName = mBean.getMemFileName();
 			// 由圖片檔的檔名來得到檔案的MIME型態
