@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.iii.ee10087.itube.QA.bean.MemberQABean;
+import org.iii.ee10087.itube._16_.FAQ.bean.*;
 
 /**
  * Servlet implementation class RetrieveImageServlet
