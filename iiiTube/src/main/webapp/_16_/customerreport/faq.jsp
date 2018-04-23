@@ -23,7 +23,7 @@
 
   <body>
  		<!-- Navigation -->
-    	<jsp:include page="../partial/header.html" />
+<%--     	<jsp:include page="../partial/header.html" /> --%>
    
     	
     <!-- Page Content -->
@@ -85,7 +85,7 @@
     </div>
     <!-- /.container -->
 	<!-- footer -->
-	<jsp:include page="../partial/footer.html" />
+<%-- 	<jsp:include page="../partial/footer.html" /> --%>
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

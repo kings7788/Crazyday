@@ -17,7 +17,7 @@
 </head>
 <body>
  	<!-- Navigation -->
-    <jsp:include page="../partial/header.html" />
+<%--     <jsp:include page="../partial/header.html" /> --%>
 	<!-- Page Content -->
     <div class="container">
 	<!-- Page Heading/Breadcrumbs -->
@@ -90,7 +90,7 @@
       <!-- /.row -->
 
 	</div>
-	<jsp:include page="../partial/footer.html" />
+<%-- 	<jsp:include page="../partial/footer.html" /> --%>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>

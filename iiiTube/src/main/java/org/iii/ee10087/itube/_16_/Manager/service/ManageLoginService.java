@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import org.iii.ee10087.itube.HibernateSessionFactory.HibernateUtil;
 import org.iii.ee10087.itube._16_.Manager.bean.*;
 import org.iii.ee10087.itube._16_.Manager.dao.*;
-import org.iii.ee10087.itube.manage.dao.*;
+
 import org.iii.ee10087.itube.memberRegister.dao.MemberDAO;
 import org.iii.ee10087.itube.memberRegister.dao.MemberDAOHibernate;
 

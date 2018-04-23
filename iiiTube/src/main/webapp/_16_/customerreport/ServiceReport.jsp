@@ -11,7 +11,7 @@
 </head>
 <body>
  	<!-- Navigation -->
-    <jsp:include page="../partial/header.html" />
+<%--     <jsp:include page="../partial/header.html" /> --%>
 	
 	<!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">後台回應問題頁面
@@ -25,7 +25,7 @@
 	
 	
 	
-	<jsp:include page="../partial/footer.html" />
+<%-- 	<jsp:include page="../partial/footer.html" /> --%>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>

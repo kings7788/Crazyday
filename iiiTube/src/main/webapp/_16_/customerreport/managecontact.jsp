@@ -13,7 +13,7 @@
 <body>
 
 		 <!-- Navigation -->
-    	<jsp:include page="../partial/header.html" />
+<%--     	<jsp:include page="../partial/header.html" /> --%>
     	
 	
 	<div class="card">
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 <!-- footer -->
-	<jsp:include page="../partial/footer.html" />
+<%-- 	<jsp:include page="../partial/footer.html" /> --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function(){

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.iii.ee10087.itube._16_.Manager.bean.*;
 import org.iii.ee10087.itube._16_.Manager.service.*;
-import org.iii.ee10087.itube.manage.bean.*;
+
 import org.iii.ee10087.itube.memberRegister.bean.LoginService;
 import org.iii.ee10087.itube.memberRegister.bean.MemberBean;
 

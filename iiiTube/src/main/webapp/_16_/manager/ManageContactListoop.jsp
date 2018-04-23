@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="org.iii.ee10087.itube.QA.bean.*"%>
+<%-- <%@ page import="org.iii.ee10087.itube.QA.bean.*"%> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +14,7 @@
 </head>
 <body>
 	<!-- Navigation -->
-	<jsp:include page="../partial/header.html" />
+<%-- 	<jsp:include page="../partial/header.html" /> --%>
 	<div class="card">
 		<div class="card-header">待處理問題回報</div>
 		<div class="card-body">
@@ -55,6 +55,6 @@
 		</div>
 	</div>
 	<!-- 每頁不同的內容到這裡結束 -->
-	<jsp:include page="../partial/footer.html" />
+<%-- 	<jsp:include page="../partial/footer.html" /> --%>
 </body>
 </html>

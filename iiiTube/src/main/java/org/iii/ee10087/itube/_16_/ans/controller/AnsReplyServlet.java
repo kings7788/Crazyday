@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.iii.ee10087.itube.HibernateSessionFactory.HibernateUtil;
 import org.iii.ee10087.itube._16_.ans.bean.*;
 import org.iii.ee10087.itube._16_.ans.dao.*;
-import org.iii.ee10087.itube.ans.dao.*;
+
 
 @WebServlet("/ans.do")
 public class AnsReplyServlet extends HttpServlet {

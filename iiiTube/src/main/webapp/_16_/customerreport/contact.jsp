@@ -24,7 +24,7 @@
   <body>
 
     	 <!-- Navigation -->
-    	<jsp:include page="../partial/header.html" />
+<%--     	<jsp:include page="../partial/header.html" /> --%>
     <!-- Page Content -->
     <div class="container">
 
@@ -123,7 +123,7 @@
     </div>
     <!-- /.container -->
 	<!-- footer -->
-	<jsp:include page="../partial/footer.html" />
+<%-- 	<jsp:include page="../partial/footer.html" /> --%>
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>

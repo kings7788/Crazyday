@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.iii.ee10087.itube.HibernateSessionFactory.HibernateUtil;
-import org.iii.ee10087.itube.QA.dao.*;
+
 import org.iii.ee10087.itube._16_.FAQ.bean.*;
 import org.iii.ee10087.itube._16_.FAQ.dao.*;
 import org.springframework.beans.factory.annotation.Autowired;
