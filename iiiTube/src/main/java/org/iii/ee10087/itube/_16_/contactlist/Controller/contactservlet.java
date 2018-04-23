@@ -20,7 +20,7 @@ import org.json.simple.JSONValue;
 @WebServlet("/contactservlet")
 public class contactservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	MemberQAService service = new MemberQAService();
+	MemberFAQService service = new MemberFAQService();
 	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

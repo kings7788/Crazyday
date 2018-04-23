@@ -21,7 +21,7 @@ import org.iii.ee10087.itube._16_.FAQ.bean.*;
 import org.iii.ee10087.itube._16_.FAQ.service.*;
 @WebServlet("/ManageContactServlet")
 public class ManageContactServlet extends HttpServlet {
-	MemberQAService service = new MemberQAService();
+	MemberFAQService service = new MemberFAQService();
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	doPost(request, response);

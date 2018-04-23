@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,13 @@ import org.hibernate.Session;
 import org.iii.ee10087.itube._16_.FAQ.bean.*;
 import org.iii.ee10087.itube._16_.FAQ.dao.*;
 import org.iii.ee10087.itube._16_.FAQ.service.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import util00.GlobalService;
 import util00.SystemUtils;
@@ -34,10 +42,28 @@ maxFileSize = 1024 * 1024 * 500,
 maxRequestSize = 1024 * 1024 * 500 * 5)
 
 
-@WebServlet("/customerreport/qa.controller")
-public class MemberQAServlet extends HttpServlet {
-private MemberQAService service ;
-//private MemberQABean bean;
+@Controller
+public class MemberFAQController  {
+	@Autowired
+	private MemberFAQService FAQService ;
+	@Autowired
+	ServletContext context;
+
+	@RequestMapping(value = "/products/add", method = RequestMethod.GET)
+	public String getProductId(Model model) {
+		BookBean bb = new BookBean();
+		model.addAttribute("bookBean", bb);
+		return "addProduct";
+	}
+	
+	@RequestMapping(value = "/customerreport/qa", method = RequestMethod.POST)
+	public String addQues(@ModelAttribute("MemberFAQBean") MemberFAQBean mb,BindingResult result,HttpServletRequest request) {
+		
+		FAQService.insert(bean)
+		return "redirect:/products";
+	}
+	
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setHeader("content-type", "text/html;charset=UTF-8");
@@ -178,7 +204,7 @@ private MemberQAService service ;
 //model 結果導向view
 		String contextPath = getServletContext().getContextPath();
 		if(submit!=null&& submit.equals("submit")) {
-			service = new MemberQAService();	
+			service = new MemberFAQService();	
 			MemberFAQBean result=null;
 				try {
 						result = service.insert(bean2);

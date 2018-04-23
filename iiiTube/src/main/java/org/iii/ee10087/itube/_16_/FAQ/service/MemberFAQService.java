@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.iii.ee10087.itube.HibernateSessionFactory.HibernateUtil;
+
 
 import org.iii.ee10087.itube._16_.FAQ.bean.*;
 import org.iii.ee10087.itube._16_.FAQ.dao.*;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class MemberQAService {
+public class MemberFAQService {
 	@Autowired
 	private MemberFAQDaoImpl dao;
 	

@@ -14,8 +14,6 @@ import org.springframework.stereotype.Repository;
 public class MemberFAQDaoImpl implements MemberFAQDao {
 	@Autowired	
 	SessionFactory factory;
-
-	
 	@Override
 	public MemberFAQBean insert(MemberFAQBean mem) throws SQLException {
 		Session session = factory.getCurrentSession();
@@ -30,17 +28,17 @@ public class MemberFAQDaoImpl implements MemberFAQDao {
 	@Override
 	public MemberFAQBean update(MemberFAQBean mem) throws SQLException {
 		Session session = factory.getCurrentSession();
-		MemberFAQBean bean = session.save(MemberFAQBean.class, mem.getMemberQuesSeqNo());
-		return null;
+		session.saveOrUpdate(mem);
+		return mem;
 	}
 
 	@Override
 	public MemberFAQBean delete(MemberFAQBean mem) throws SQLException {
 		Session session = factory.getCurrentSession();
-		MemberFAQBean bean = session.get(MemberFAQBean.class, mem.getMemberQuesNum());
-		if(bean!=null) {
-			session.delete(bean);
-			return bean;
+		MemberFAQBean temp = session.get(MemberFAQBean.class, mem.getMemberQuesSeqNo());
+		if(temp!=null) {
+			session.delete(temp);
+			return temp;
 		}
 		return null;
 	}
@@ -48,9 +46,9 @@ public class MemberFAQDaoImpl implements MemberFAQDao {
 	@Override
 	public MemberFAQBean findbyPrimaryKey(MemberFAQBean mem) throws SQLException {
 		Session session = factory.getCurrentSession();
-		return session.get(MemberFAQBean.class,  mem.getMemberQuesNum());
+		return session.get(MemberFAQBean.class,  mem.getMemberQuesSeqNo());
 	}
-
+	
 	@Override
 	public List<MemberFAQBean> getALL() throws SQLException {
 		Session session = factory.getCurrentSession();

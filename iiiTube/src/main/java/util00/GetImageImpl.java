@@ -17,7 +17,7 @@ public class GetImageImpl implements GetImageDao {
 	public MemberFAQBean getQAImage(MemberFAQBean mem) {
 		
 		MemberFAQBean mb = null;
-		MemberQAService service = new MemberQAService();
+		MemberFAQService service = new MemberFAQService();
 		try {
 			mb = service.select(mem);
 		} catch (SQLException e) {
