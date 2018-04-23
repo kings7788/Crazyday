@@ -4,10 +4,9 @@ package util00;
 import java.sql.SQLException;
 
 import org.iii.ee10087.itube.HibernateSessionFactory.HibernateUtil;
-import org.iii.ee10087.itube.QA.bean.MemberQABean;
-import org.iii.ee10087.itube.QA.dao.MemberQADAO;
-import org.iii.ee10087.itube.QA.dao.MemeberQAHibernate;
-import org.iii.ee10087.itube.QA.service.MemberQAService;
+import org.iii.ee10087.itube._16_.FAQ.bean.*;
+import org.iii.ee10087.itube._16_.FAQ.dao.*;
+import org.iii.ee10087.itube._16_.FAQ.service.*;
 
 
 public class GetImageImpl implements GetImageDao {

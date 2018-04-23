@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.videoDescription {
+	width: 90%;
+	overflow: hidden;
+	height: 40px;
+	line-height: 20px;
+	display: inline-block;
+	float: left;
+	/* 		border: blue solid 1px; */
+	margin: -10px 0px;
+}
+
+.videoDescriptionOutSide {
+	display: block;
+	/* 		border: red solid 1px; */
+	float: left;
+	height: 40px;
+	line-height: 20px;
+	margin: -10px 0px;
+}
+
+.videoTypeOutSide {
+	display: block;
+	/*   		border: red solid 1px;   */
+	float: left;
+	/* 		height: 40px; */
+	line-height: 20px;
+	width: 8%;
+	margin-top: -10px;
+	margin-bottom: 7px
+}
+
+.videoType {
+	width: 92%;
+	overflow: hidden;
+	/* 		height: 40px;  */
+	line-height: 20px;
+	display: block;
+	float: left;
+	/*   		border: blue solid 1px;   */
+	margin-top: -10px;
+	margin-bottom: 7px
+}
+
+.videoDatas {
+	font-size: 15px;
+	line-height: 5px;
+}
+
+.addVideoButtonDiv {
+	/*  		border: blue solid 1px;  */
+	text-align: right;
+	height: 50px;
+	margin-top: 25px;
+}
+
+.addVideoButton {
+	height: 50px;
+}
+
+.updateRadio {
+	display: inline-block
+}
+
+.seqNo {
+	display: none
+}
+
+label, input {
+	display: block;
+}
+
+input.text {
+	margin-bottom: 12px;
+	width: 95%;
+	padding: .4em;
+}
+
+fieldset {
+	padding: 0;
+	border: 0;
+	/* 				margin-top:25px;  */
+}
+
+h1 {
+	font-size: 1.2em;
+	margin: .6em 0;
+}
+
+div#users-contain {
+	width: 350px;
+	margin: 20px 0;
+}
+
+div#users-contain table {
+	margin: 1em 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+div#users-contain table td, div#users-contain table th {
+	border: 1px solid #eee;
+	padding: .6em 10px;
+	text-align: left;
+}
+
+.ui-dialog .ui-state-error {
+	padding: .3em;
+}
+
+.validateTips {
+	border: 1px solid transparent;
+	/* 				padding: 0.3em;  */
+	margin: 0px;
+	/* 				border : solid 1px red; */
+}
+
+#insertForm {
+	/* 				border: solid 1px red; */
+	
+}
