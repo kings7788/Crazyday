@@ -59,10 +59,13 @@ public class MemberFAQController  {
 	}
 	
 	@RequestMapping(value = "/customerreport/qa", method = RequestMethod.POST)
-	public String addQues(@ModelAttribute("MemberFAQBean") MemberFAQBean mb,BindingResult result,HttpServletRequest request) {
-		
-//		FAQService.insert(bean)
-		return "redirect:/products";
+	public String addQues(@ModelAttribute("memberFAQBean") MemberFAQBean mb,BindingResult result,HttpServletRequest request) {	
+		try {
+			FAQService.insert(mb);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return "redirect:/customerreport/reportSuccess";
 	}
 	
 	
