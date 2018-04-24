@@ -88,7 +88,7 @@
 <!-- 	          </li> -->
 	          
 	          <li class="nav-item">
-	            <a class="nav-link" href="<c:url value='/memberCenter/memberCenter.jsp' />">會員中心</a>
+	            <a class="nav-link" href="Contact.do">會員中心</a>
 	          </li>
 	          <c:if test="${empty LoginOK}">
 	          <li class="nav-item">
