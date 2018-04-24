@@ -13,11 +13,11 @@
 
     <title>Modern Business - Start Bootstrap Template</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+<link href="<c:url value='/global/vendor/bootstrap/css/bootstrap.min.css'/> " rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../css/modern-business.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="<c:url value='/global/css/modern-business.css'/>" rel="stylesheet">
 
   </head>
 
@@ -25,6 +25,7 @@
 
     	 <!-- Navigation -->
 <%--     	<jsp:include page="../partial/header.html" /> --%>
+<%@ include file="/WEB-INF/views/global/fragment/top.jsp" %>
     <!-- Page Content -->
     <div class="container">
 
@@ -126,12 +127,12 @@
 <%-- 	<jsp:include page="../partial/footer.html" /> --%>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="<c:url value='/global/vendor/jquery/jquery.min.js'/> "></script>
+	<script src="<c:url value='/global/vendor/bootstrap/js/bootstrap.bundle.min.js'/> "></script>
 
     <!-- Contact form JavaScript -->
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="../js/jqBootstrapValidation.js"></script>
+<!--     <script src="../js/jqBootstrapValidation.js"></script> -->
 <!--     <script src="js/contact_me.js"></script> -->
 
   </body>
