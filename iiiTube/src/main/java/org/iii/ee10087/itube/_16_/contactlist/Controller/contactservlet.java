@@ -20,7 +20,7 @@ import org.json.simple.JSONValue;
 @WebServlet("/contactservlet")
 public class contactservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	MemberFAQService service = new MemberFAQService();
+	MemberQAService service = new MemberQAService();
 	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,8 +31,8 @@ public class contactservlet extends HttpServlet {
 		LinkedList<HashMap<String, String>> l1 = new LinkedList<HashMap<String, String>>();
 		PrintWriter out = response.getWriter();
 		try {
-			List<MemberFAQBean> list = service.getALL();
-			for (MemberFAQBean bean : list) {
+			List<MemberQABean> list = service.getALL();
+			for (MemberQABean bean : list) {
 				HashMap<String, String> m2 = new HashMap<String, String>();
 				String a = bean.getMemberQuesNum().toString();
 				m2.put("MemQuesNum", a);

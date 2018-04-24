@@ -21,7 +21,7 @@ import org.iii.ee10087.itube._16_.FAQ.bean.*;
 import org.iii.ee10087.itube._16_.FAQ.service.*;
 @WebServlet("/ManageContactServlet")
 public class ManageContactServlet extends HttpServlet {
-	MemberFAQService service = new MemberFAQService();
+	MemberQAService service = new MemberQAService();
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	doPost(request, response);
@@ -35,12 +35,12 @@ public class ManageContactServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		LinkedList<HashMap<String, String>> l1 = new LinkedList<HashMap<String, String>>();
 		PrintWriter out = response.getWriter();
-			List<MemberFAQBean> list;
+			List<MemberQABean> list;
 			try {
 					list = service.getALL();
 					//request.setAttribute("MapKey", list);
 					session.setAttribute("MapKey", list);
-					for(MemberFAQBean bean : list) {
+					for(MemberQABean bean : list) {
 						Blob blob = bean.getMemQuespic();		
 					}
 					

@@ -14,10 +14,10 @@ public class GetImageImpl implements GetImageDao {
 
 	
 	@Override
-	public MemberFAQBean getQAImage(MemberFAQBean mem) {
+	public MemberQABean getQAImage(MemberQABean mem) {
 		
-		MemberFAQBean mb = null;
-		MemberFAQService service = new MemberFAQService();
+		MemberQABean mb = null;
+		MemberQAService service = new MemberQAService();
 		try {
 			mb = service.select(mem);
 		} catch (SQLException e) {

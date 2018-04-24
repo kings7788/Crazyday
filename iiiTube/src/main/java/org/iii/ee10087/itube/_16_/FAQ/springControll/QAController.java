@@ -16,7 +16,7 @@ public class QAController {
 	@Autowired
 	ServletContext context;
 	@Autowired
-	MemberFAQService service;
+	MemberQAService service;
 	@RequestMapping("/customerreport/qa")
 	public String insertContact(Model model,HttpServletRequest request,
 											HttpServletResponse response,HttpSession session) {
