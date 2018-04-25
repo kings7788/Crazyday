@@ -15,7 +15,7 @@ import org.iii.ee10087.itube._16_.FAQ.bean.*;
 import org.iii.ee10087.itube._16_.FAQ.service.*;
 @WebServlet("/contactlistdetail.do")
 public class ContactListDetail extends HttpServlet {
-	MemberQAService selectdetail = new MemberQAService();
+	MemberFAQService selectdetail = new MemberFAQService();
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	this.doPost(request, response);
@@ -33,11 +33,11 @@ public class ContactListDetail extends HttpServlet {
 		
 		int quesnum = Integer.parseInt(a);
 		
-		MemberQABean bean= new MemberQABean();
+		MemberFAQBean bean= new MemberFAQBean();
 		bean.setMemberQuesNum(quesnum);
 		
 		try {
-			MemberQABean beandetail = selectdetail.select(bean);
+			MemberFAQBean beandetail = selectdetail.select(bean);
 			if(beandetail!=null) {
 //				request.setAttribute("HaveBean", beandetail);
 				session.setAttribute("HaveBean", beandetail);

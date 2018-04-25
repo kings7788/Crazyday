@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.iii.ee10087.itube.HibernateSessionFactory.HibernateUtil;
+
 
 import org.iii.ee10087.itube._16_.FAQ.bean.*;
 import org.iii.ee10087.itube._16_.FAQ.dao.*;
@@ -13,13 +13,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class MemberQAService {
+public class MemberFAQService {
 	@Autowired
-	private MemeberQAHibernate dao;
+	private MemberFAQDaoImpl dao;
 	
 	@Transactional
-	public MemberQABean insert(MemberQABean bean) throws SQLException {
-		MemberQABean result =null;
+	public MemberFAQBean insert(MemberFAQBean bean) throws SQLException {
+		MemberFAQBean result =null;
 		if(bean!=null) {
 			result = dao.insert(bean);
 		return result;
@@ -27,15 +27,15 @@ public class MemberQAService {
 		return null;
 	}
 	@Transactional
-	public List<MemberQABean> getALL() throws SQLException {
-		List<MemberQABean> resultlist = null;
+	public List<MemberFAQBean> getALL() throws SQLException {
+		List<MemberFAQBean> resultlist = null;
 		resultlist = dao.getALL();
 	
 		return resultlist;
 	}
 	@Transactional
-	public MemberQABean select(MemberQABean bean) throws SQLException {
-		MemberQABean result =null;
+	public MemberFAQBean select(MemberFAQBean bean) throws SQLException {
+		MemberFAQBean result =null;
 		result = dao.findbyPrimaryKey(bean);
 		if(result!=null) {
 		return result;

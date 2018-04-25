@@ -3,3 +3,7 @@ iiiTube/.classpath
 iiiTube/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 iiiTube/target/m2e-wtp/web-resources/META-INF/maven/com.iii.born/iiiTube/pom.properties
 *.properties
+iiiTube/.classpath
+*.java
+iiiTube/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+iiiTube/target/m2e-wtp/web-resources/META-INF/maven/com.iii.born/iiiTube/pom.properties
