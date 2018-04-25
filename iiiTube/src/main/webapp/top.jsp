@@ -1,5 +1,7 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <c:set var="target" value="${pageContext.request.servletPath}" scope="session" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -107,11 +109,17 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<div class="login_box">
+					
+					<form:form method="POST" modelAttribute="MemberBean" class = "form-horizontal" enctype="multipart/form-data"> 
+					
+					<label></label>
+					
+					
+					</form:form>
 
 
 						<form action="<c:url value="/register.do"/>"
-							enctype="multipart/form-data" method="post">
+ 							enctype="multipart/form-data" method="post"> 
 							<table class="reg_table">
 								<tr>
 									<td><label for="Acc">帳號:</label></td>
@@ -157,7 +165,7 @@
 
 							<div style="color: #FF0000; display: inline">${ErrorMsg.exception}</div>
 						</form>
-					</div>
+
 
 
 				</div>
