@@ -55,7 +55,7 @@
               <div class="controls">
                 <label>項目:</label>
 <!--                 <input type="text" class="form-control" id="topic"  name="topic" > -->
-	                <form:select path="topic" class="form-control"  id="topic"  name="topic">
+	                <form:select path="memTopic" class="form-control"  id="topic"  name="topic">
 					  <form:option value="直播">直播</form:option>
 					  <form:option value="商城">商城</form:option>
 					  <form:option value="競標">競標</form:option>
@@ -66,37 +66,37 @@
             <div class="control-group form-group">
               <div class="controls">
                 <label>Account/帳號<span style="color:red">*</span></label>
-                <form:input type="text" path="idd" class="form-control" id="account" name="idd" value="${LoginOK.account}" />
+                <form:input type="text" path="account" class="form-control" id="account" name="idd" value="${LoginOK.account}" />
                 <p class="help-block">${errors.errorIDEmpty}</p>
               </div>
             </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Name/姓名與職稱<span style="color:red">*</span></label>
-                <form:input type="text" path="name" class="form-control" id="nickname"  name="name" value="${LoginOK.name}" required="required" />
-                <p class="help-block">${errors.errorNameEmpty}</p>
-              </div>
-            </div>
+<!--             <div class="control-group form-group"> -->
+<!--               <div class="controls"> -->
+<!--                 <label>Name/姓名與職稱<span style="color:red">*</span></label> -->
+<%--                 <form:input type="text" path="name" class="form-control" id="nickname"  name="name" value="${LoginOK.name}" required="required" /> --%>
+<%--                 <p class="help-block">${errors.errorNameEmpty}</p> --%>
+<!--               </div> -->
+<!--             </div> -->
            
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Email/電子信箱<span style="color:red">*</span></label>
-                <form:input type="email" path="mailbox" class="form-control" id="email" name="mailbox" value="${LoginOK.email}"/>
-                <p class="help-block">${errors.errormailEmpty}</p>
-              </div>
-            </div>
+<!--             <div class="control-group form-group"> -->
+<!--               <div class="controls"> -->
+<!--                 <label>Email/電子信箱<span style="color:red">*</span></label> -->
+<%--                 <form:input type="email" path="mailbox" class="form-control" id="email" name="mailbox" value="${LoginOK.email}"/> --%>
+<%--                 <p class="help-block">${errors.errormailEmpty}</p> --%>
+<!--               </div> -->
+<!--             </div> -->
 
             <div class="control-group form-group">
               <div class="controls">
                 <label>Title/主旨<span style="color:red">*</span></label>
-                <form:input type="text" path="title" id="title" name="title"  value="${param.title}"/>
+                <form:input type="text" path="memTitle" id="title" name="title"  value="${param.title}"/>
                 <p class="help-block">${errors.errortitleeEmpty}</p>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Messeage/聯絡訊息<span style="color:red">*</span></label>
-                <form:textarea path="report" rows="4" cols="180"  class="form-control" name="report" value="${param.report}" required="required"/>${param.report}
+                <form:textarea path="memAsk" rows="4" cols="180"  class="form-control" name="report" value="${param.report}" required="required"/>${param.report}
                 <p class="help-block"></p>
               </div>
             </div>
@@ -104,7 +104,7 @@
             <div class="control-group form-group">
               <div class="controls">
                 <label>照片:</label>
-                <form:input type="file" path="videoTitle" class="form-control" id="picture" name="picture" />
+                <form:input type="file" path="memPicName" class="form-control" id="picture" name="picture" />
                 <div class="help-block">${errors.errPicture}</div>
               </div>
             </div>

@@ -8,8 +8,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.iii.ee10087.itube._16_.FAQ.bean.*;
 import org.iii.ee10087.itube._16_.FAQ.dao.*;
+import org.iii.ee10087.itube.memberRegister.bean.MemberBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 @Repository
 public class MemberFAQDaoImpl implements MemberFAQDao {
 	@Autowired	
@@ -17,12 +19,8 @@ public class MemberFAQDaoImpl implements MemberFAQDao {
 	@Override
 	public MemberFAQBean insert(MemberFAQBean mem) throws SQLException {
 		Session session = factory.getCurrentSession();
-		MemberFAQBean temp = session.get(MemberFAQBean.class, mem.getMemberQuesSeqNo());		
-		if(temp==null) {
 		session.save(mem);
 		return mem;
-		}
-		return null;
 	}
 
 	@Override

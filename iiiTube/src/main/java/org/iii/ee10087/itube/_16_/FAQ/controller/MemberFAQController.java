@@ -1,5 +1,6 @@
 package org.iii.ee10087.itube._16_.FAQ.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
@@ -28,10 +29,12 @@ import org.iii.ee10087.itube._16_.FAQ.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import util00.GlobalService;
 import util00.SystemUtils;
@@ -58,12 +61,38 @@ public class MemberFAQController  {
 		
 	}
 	
-	@RequestMapping(value = "/customerreport/qa", method = RequestMethod.POST)
+	@RequestMapping(value = "Contact.do", method = RequestMethod.POST)
 	public String addQues(@ModelAttribute("memberFAQBean") MemberFAQBean mb,BindingResult result,HttpServletRequest request) {	
+		String[] suppressedFields = result.getSuppressedFields();
+		if (suppressedFields.length > 0) {
+			System.out.println("嘗試輸入不允許的欄位");
+			throw new RuntimeException("嘗試輸入不允許的欄位: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
+		}
+		MultipartFile quesImage = mb.getMemPicName();
+		String originalFilename = quesImage.getOriginalFilename();
+		mb.setMemFileName(originalFilename);	
+		
+		// 取出影片封面圖片副檔名
+		String extImage = originalFilename.substring(originalFilename.lastIndexOf("."));
+		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+		System.out.println(rootDirectory);
+		
+		
 		try {
+			mb.setMemQuesTime(new java.sql.Date(0));
 			FAQService.insert(mb);
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+		
+		try {
+			File imageFolder = new File("C:/resources/images/", "images");
+			if (!imageFolder.exists()) imageFolder.mkdirs();
+			File file = new File(imageFolder, mb.getMemPicName() + extImage);
+			quesImage.transferTo(file);
+		} catch(Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException("檔案上傳發生異常: " + e.getMessage());
 		}
 		return "redirect:/customerreport/reportSuccess";
 	}
